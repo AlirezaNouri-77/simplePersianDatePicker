@@ -9,8 +9,8 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 
 @Immutable
 data class WheelPickerModel(
-  var number: Int,
-  var value: String,
+  val number: Int,
+  val value: String,
 )
 
 data class CurrentDate(
@@ -22,15 +22,15 @@ data class CurrentDate(
 
 sealed interface CenterIndicator {
   data class TwoLine(
-    var lineThickness: Float = 10f,
-    var cap: StrokeCap = StrokeCap.Round,
-    var color: Color = Color.Black,
+    val lineThickness: Float = 10f,
+    val cap: StrokeCap = StrokeCap.Round,
+    val color: Color = Color.Black,
   ) : CenterIndicator
 
   data class RecRound(
-    var cornerRadius: CornerRadius = CornerRadius(x = 10f, y = 10f),
-    var style: DrawStyle = Stroke(),
-    var color: Color = Color.Black,
+    val cornerRadius: CornerRadius = CornerRadius(x = 10f, y = 10f),
+    val style: DrawStyle = Stroke(),
+    val color: Color = Color.Black,
   ) : CenterIndicator
 
 }

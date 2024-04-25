@@ -11,9 +11,6 @@ import androidx.compose.ui.graphics.graphicsLayer
 
 fun getDayOfMonth(monthNumber: Int, year: Int): List<WheelPickerModel> {
 
-  Log.d("TAG666", "monthNumber: " + monthNumber)
-  Log.d("TAG666", "year: " + year)
-
   val leapYears = listOf(
     1403, 1407, 1411, 1415, 1419, 1423, 1427, 1431, 1435, 1439
   )

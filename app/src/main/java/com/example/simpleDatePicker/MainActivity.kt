@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -40,36 +41,38 @@ class MainActivity : ComponentActivity() {
           )
         }
 
-        Column(
-          modifier = Modifier.fillMaxSize(),
-          verticalArrangement = Arrangement.Center,
-          horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
+        Surface {
+          Column(
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally,
+          ) {
 
-          DatePicker(
-            currentDate,
-            showCenterIndicator = true,
-            centerIndicator = CenterIndicator.TwoLine(lineThickness = 5f),
-            onDayChange = { day ->
-              currentDate = currentDate.copy(day = day)
-            },
-            onMonthChange = { number, month ->
-              currentDate = currentDate.copy(monthNumber = number, month = month)
-            },
-            onYearChange = { year ->
-              currentDate = currentDate.copy(year = year)
-            },
-          )
+            DatePicker(
+              currentDate,
+              showCenterIndicator = true,
+              centerIndicator = CenterIndicator.TwoLine(lineThickness = 5f),
+              onDayChange = { day ->
+                currentDate = currentDate.copy(day = day)
+              },
+              onMonthChange = { number, month ->
+                currentDate = currentDate.copy(monthNumber = number, month = month)
+              },
+              onYearChange = { year ->
+                currentDate = currentDate.copy(year = year)
+              },
+            )
 
-          Spacer(modifier = Modifier.height(20.dp))
+            Spacer(modifier = Modifier.height(20.dp))
 
-          Text(
-            text = "${currentDate.year} ${currentDate.month} ${currentDate.day}",
-            fontSize = 17.sp
-          )
+            Text(
+              text = "${currentDate.year} ${currentDate.month} ${currentDate.day}",
+              fontSize = 17.sp
+            )
+
+          }
 
         }
-
       }
     }
   }
